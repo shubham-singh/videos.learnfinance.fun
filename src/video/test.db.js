@@ -37,10 +37,10 @@ const videosList = [
   }
 ];
 
-const youtube = {
-  title: `http://youtube.com/get_video_info?video_id=${}`,
-  hq: `https://img.youtube.com/vi/${video_id}/hqdefault.jpg`,
-  mq: `https://img.youtube.com/vi/${video_id}/mqdefault.jpg`
-}
+// const youtube = {
+//   title: `http://youtube.com/get_video_info?video_id=${}`,
+//   hq: `https://img.youtube.com/vi/${video_id}/hqdefault.jpg`,
+//   mq: `https://img.youtube.com/vi/${video_id}/mqdefault.jpg`
+// }
 
 export default videosList;

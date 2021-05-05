@@ -8,14 +8,13 @@ import { ReactComponent as PlaylistAdd } from "../assets/icons/PlaylistAdd.svg";
 const AddToPlaylist = ({ video }) => {
   const { playlistKeys } = usePlaylist();
   const [showPlaylistModal, setPlaylistModal] = useState(null);
-  console.log(playlistKeys === 0);
+
   function playlistModal() {
     setPlaylistModal("show");
   }
 
   return (
     <div>
-      {/* <Playlist className="pointer ml-m mr-m" onClick={playlistModal} /> */}
       <PlaylistAdd className="pointer ml-m mr-m" onClick={playlistModal} />
       {showPlaylistModal && (
         <div className="playlist">

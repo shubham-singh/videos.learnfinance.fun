@@ -1,8 +1,13 @@
 import { useLike } from "./like.context";
 import { ReactComponent as ThumbsUpFilled } from "../assets/icons/ThumbsUpFilled.svg";
 import { ReactComponent as ThumbsUpOutlined } from "../assets/icons/ThumbsUpOutlined.svg";
+import Snackbar from "../snackbar";
+import { useState } from "react";
+
 const LikeButton = ({ video }) => {
   const { likedVideos, likeDispatch } = useLike();
+
+  const [showSnackbar, setShowSnackbar] = useState();
 
   const isVideoLiked = (likedVideosArr, video) => {
     return likedVideosArr.some((likedVideo) => likedVideo._id === video._id);
@@ -29,9 +34,34 @@ const LikeButton = ({ video }) => {
   return (
     <>
       {isLiked ? (
-        <ThumbsUpFilled className="pointer" onClick={unlikeVideo} />
+        <ThumbsUpFilled
+          className="pointer"
+          onClick={() => {
+            unlikeVideo();
+            setShowSnackbar("show");
+            setTimeout(() => {
+              setShowSnackbar(null);
+            }, 3000);
+          }}
+        />
       ) : (
-        <ThumbsUpOutlined className="pointer" onClick={likeVideo} />
+        <ThumbsUpOutlined
+          className="pointer"
+          onClick={() => {
+            likeVideo();
+            setShowSnackbar("show");
+            setTimeout(() => {
+              setShowSnackbar(null);
+            }, 3000);
+          }}
+        />
+      )}
+      {showSnackbar && (
+        <Snackbar
+          message={
+            isLiked ? "Added to Liked videos" : "Removed from Liked videos"
+          }
+        />
       )}
     </>
   );

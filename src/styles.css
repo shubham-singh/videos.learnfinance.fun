@@ -113,6 +113,17 @@ a {
   max-width: 320px;
 }
 
+.snackbar {
+  position: fixed;
+  margin: var(--margin-xs);
+  padding: 0 5em 0 var(--padding-xl);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
+
 @media screen and (min-width: 769px) {
   .App {
     display: grid;

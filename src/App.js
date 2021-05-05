@@ -1,24 +1,22 @@
 import "./styles.css";
 import { Routes, Route } from "react-router-dom";
-import Iframe from "./Iframe";
-import Nav from "./navigation/Nav";
+import NavbarLayout from "./navigation/navbar.layout";
 import VideoList from "./video/videos";
-
+import VideoWatch from "./video/videoWatch";
+import LikeLayout from "./like/like.layout";
+import PlaylistLayout from "./playlist/playlist.layout";
+import PlaylistView from "./playlist/playlist.view";
 export default function App() {
   return (
     <div className="App">
-      <Nav />
+      <NavbarLayout />
       <Routes>
         <Route path="/" element={<VideoList />} />
+        <Route path="/watch/:id" element={<VideoWatch />} />
+        <Route path="/playlist" element={<PlaylistLayout />} />
+        <Route path="/playlist/:id" element={<PlaylistView />} />
+        <Route path="/liked" element={<LikeLayout />} />
       </Routes>
-      {/* <div className="video-container">
-        <div className="video">
-          <Iframe src="https://www.youtube-nocookie.com/embed/0roQUZvU-As" />
-        </div>
-      </div> */}
-      <div className="video">
-        <Iframe src="https://www.youtube-nocookie.com/embed/0roQUZvU-As" />
-      </div>
     </div>
   );
 }

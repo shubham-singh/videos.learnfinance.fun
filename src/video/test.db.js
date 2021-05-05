@@ -1,39 +1,99 @@
-const videosList = [
+const videoData = [
   {
-    id: "9I_-ADGrKQo"
+    youtubeId: "9I_-ADGrKQo",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "3ez10ADR_gM"
+    youtubeId: "3ez10ADR_gM",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "NI9TLDIPVcs"
+    youtubeId: "NI9TLDIPVcs",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "B43YEW2FvDs"
+    youtubeId: "B43YEW2FvDs",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "g9aDizJpd_s"
+    youtubeId: "g9aDizJpd_s",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "d8uTB5XorBw"
+    youtubeId: "d8uTB5XorBw",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "UHiUYj5EA0w"
+    youtubeId: "UHiUYj5EA0w",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "T8-85cZRI9o"
+    youtubeId: "T8-85cZRI9o",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "otmgFQHbaDo"
+    youtubeId: "otmgFQHbaDo",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "3sUCSGVYzI0"
+    youtubeId: "3sUCSGVYzI0",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "1dq7mMort9o"
+    youtubeId: "1dq7mMort9o",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   },
   {
-    id: "Dugn51K_6WA"
+    youtubeId: "Dugn51K_6WA",
+    statistics: {
+      viewCount: 0,
+      likeCount: 0,
+      dislikeCount: 0
+    }
   }
 ];
 
@@ -43,4 +103,4 @@ const videosList = [
 //   mq: `https://img.youtube.com/vi/${video_id}/mqdefault.jpg`
 // }
 
-export default videosList;
+export default videoData;

@@ -1,14 +1,12 @@
 import { createContext, useContext, useReducer } from "react";
 import VideoReducer from "./video.reducer.js";
 
-import videosList from "./test.db";
-
 const VideoContext = createContext();
 
 export const VideoContextProvider = (props) => {
   const [videos, dispatch] = useReducer(VideoReducer, {
-    // videos: []
-    videos: videosList
+    videos: []
+    // videos: videosList
   });
 
   return (

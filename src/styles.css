@@ -103,11 +103,21 @@ a {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.video-card {
+  max-width: 320px;
+}
+
 @media screen and (min-width: 769px) {
   .App {
     display: grid;
     grid-template-columns: 18% auto;
-    grid-template-rows: 10% auto;
+    grid-template-rows: 7vh auto;
     grid-template-areas:
       "sidebar top-grid top-grid"
       "sidebar videos videos";
@@ -116,7 +126,7 @@ a {
   .playlist-info {
     grid-area: playlist-info;
     padding: var(--padding-xl);
-    position: fixed;
+    position: sticky;
     top: 0;
     height: fit-content;
   }

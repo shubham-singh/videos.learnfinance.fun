@@ -23,7 +23,7 @@ const PlaylistView = () => {
                   alt="thumbnail"
                   src={`https://i.ytimg.com/vi/${video.youtubeId}/mqdefault.jpg`}
                 />
-                <h2 className="m-m">video.title</h2>
+                <h2 className="m-m">{video.title}</h2>
               </Link>
               <hr className="m-s" />
             </>

@@ -30,7 +30,7 @@ const VideoWatch = () => {
 
   return (
     <div className="video-container">
-      <h1>video.title</h1>
+      <h1>{video.title}</h1>
       <Iframe video={video} />
       <div className="flex-r video-actions">
         <LikeButton video={video} />

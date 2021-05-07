@@ -5,7 +5,6 @@ const PlaylistContext = createContext();
 
 export const PlaylistContextProvider = (props) => {
   const [playlist, dispatch] = useReducer(PlaylistReducer, {
-    // playlist: []
     playlist: {},
     playlistKeys: function () {
       return Object.keys(this.playlist);

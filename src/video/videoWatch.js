@@ -4,13 +4,10 @@ import AddToPlaylist from "../playlist/addToPlaylist";
 import LikeButton from "../like/likeButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useVideos } from "./video.context";
 
 const VideoWatch = () => {
   let { id } = useParams();
 
-  const { videos } = useVideos();
-  // const video = videos.find((video) => video._id === id);
   const [video, setVideo] = useState("");
 
   const getVideo = async () => {

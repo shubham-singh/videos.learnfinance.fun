@@ -9,13 +9,12 @@ const AddToPlaylist = ({ video }) => {
   const { playlistKeys } = usePlaylist();
   const [showPlaylistModal, setPlaylistModal] = useState(null);
 
-  function playlistModal() {
-    setPlaylistModal("show");
-  }
-
   return (
     <div>
-      <PlaylistAdd className="pointer ml-m mr-m" onClick={playlistModal} />
+      <PlaylistAdd
+        className="pointer ml-m mr-m"
+        onClick={() => setPlaylistModal("show")}
+      />
       {showPlaylistModal && (
         <div className="playlist">
           <div

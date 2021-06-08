@@ -10,7 +10,7 @@ const VideoList = () => {
   const getData = async () => {
     try {
       const videoData = await axios.get(
-        "https://videos-learnfinance-fun.herokuapp.com/"
+        "https://videos-learnfinance-fun.herokuapp.com/video"
       );
       videoDispatch({ type: "SET_VIDEOS", payload: videoData.data.videos });
     } catch (error) {

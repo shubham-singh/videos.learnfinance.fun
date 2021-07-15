@@ -1,9 +1,28 @@
 import { useState } from "react";
+import { useLocalisation } from "../localisation/localisation.context";
+import { useSnackbar } from "../snackbar/snackbar.context";
+import { createPlaylist } from "../utils/server.requests";
 import { usePlaylist } from "./playlist.context";
+import { lang } from "../localisation/localisation.data";
 
 const CreatePlaylist = ({ video, setPlaylistModal }) => {
   const [playlistName, setPlaylistName] = useState("");
-  const { playlistDispatch } = usePlaylist();
+  const { playlistDispatch, playlistKeys } = usePlaylist();
+  const { snackbarDispatch } = useSnackbar();
+  const { language } = useLocalisation();
+
+  const createPlaylistHandle = () => {
+    if (playlistKeys.includes(playlistName)) {
+      snackbarDispatch({
+        type: "SHOW_SNACKBAR",
+        payload: "Playlist with the name already exists."
+      });
+    } else {
+      createPlaylist(video, playlistName, playlistDispatch, snackbarDispatch);
+      setPlaylistName("");
+      setPlaylistModal(null);
+    }
+  };
 
   return (
     <>
@@ -11,22 +30,15 @@ const CreatePlaylist = ({ video, setPlaylistModal }) => {
       <input
         className="input-playlist medium block"
         type="text"
-        placeholder="Enter playlist name.."
+        placeholder={lang[language].enterPlaylistName}
         value={playlistName}
         onChange={(e) => setPlaylistName(e.target.value)}
       />
       <button
         className="btn btn-classic shadow inline"
-        onClick={() => {
-          playlistDispatch({
-            type: "CREATE_AND_ADD_TO_PLAYLIST",
-            payload: { playlistName, video }
-          });
-          setPlaylistName("");
-          setPlaylistModal(null);
-        }}
+        onClick={createPlaylistHandle}
       >
-        Create and save
+        {lang[language].createAndSave}
       </button>
     </>
   );

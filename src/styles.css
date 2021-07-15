@@ -113,25 +113,34 @@ a {
   max-width: 320px;
 }
 
-.snackbar {
+.empty-space {
+  margin: 5rem 0;
+}
+
+.spinner {
   position: fixed;
-  margin: var(--margin-xs);
-  padding: 0 5em 0 var(--padding-xl);
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  bottom: 0;
-  left: 0;
-  z-index: 4;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-25px);
 }
 
 @media screen and (min-width: 769px) {
-  .App {
+  .content {
     display: grid;
     grid-template-columns: 18% auto;
     grid-template-rows: 7vh auto;
     grid-template-areas:
       "sidebar top-grid top-grid"
       "sidebar videos videos";
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 0;
+    margin-right: var(--margin-m);
+    height: 100vh;
+    width: 18vw;
   }
 
   .playlist-info {
@@ -146,6 +155,10 @@ a {
     grid-area: playlist-video;
     display: flex;
   }
+  .playlist-videos {
+    display: flex;
+    flex-direction: row;
+  }
 
   .playlist-page {
     display: grid;
@@ -154,14 +167,6 @@ a {
     grid-template-areas:
       "playlist-info playlist-video"
       "playlist-info playlist-video";
-  }
-
-  .sidebar {
-    grid-area: sidebar;
-    margin-right: var(--margin-m);
-    height: 100vh;
-    position: sticky;
-    top: 0;
   }
 
   .nav-link {
@@ -223,5 +228,14 @@ a {
 
   .playlist-modal {
     transform: translateY(-20%);
+  }
+
+  .content {
+    min-height: 100vh;
+  }
+
+  .playlist-videos {
+    display: flex;
+    flex-direction: column;
   }
 }

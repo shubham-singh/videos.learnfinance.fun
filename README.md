@@ -6,9 +6,10 @@
 
 - Common authentication among all learnfinance.fun web applications
 - JSON Web Token Authorization
+- Like and Dislike management
+- Playlist management
 - Multiple Languages
 - REST API
-- Notifications
 - Responsive to different screen sizes
 
 # Techstack

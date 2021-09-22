@@ -18,6 +18,7 @@ import {
   CLEAR_HISTORY,
   ADD_TO_HISTORY
 } from "./api.routes";
+import { deleteAuthToken } from "./function";
 
 export const login = async (loginInfo, authDispatch, snackbarDispatch) => {
   try {
@@ -88,7 +89,7 @@ export const signup = async (signupInfo, authDispatch, snackbarDispatch) => {
   }
 };
 
-export const getUser = async (authDispatch) => {
+export const getUser = async (authDispatch, snackbarDispatch) => {
   try {
     const response = await axios.get(GET_USER);
     authDispatch({
@@ -96,7 +97,13 @@ export const getUser = async (authDispatch) => {
       payload: { firstName: response.data.user.firstName }
     });
   } catch (error) {
-    console.log(error);
+    if (error.response.data.error === "jwt expired") {
+      snackbarDispatch({
+        type: "SHOW_SNACKBAR",
+        payload: "Please Login again"
+      });
+      deleteAuthToken()
+    }
   }
 };
 

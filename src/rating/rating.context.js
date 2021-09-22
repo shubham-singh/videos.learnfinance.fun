@@ -28,7 +28,7 @@ export const RatingContextProvider = (props) => {
   useEffect(() => {
     if (user.loggedIn) {
       setupAuthHeaderForServiceCalls();
-      getUser(authDispatch);
+      getUser(authDispatch, snackbarDispatch);
       getAllPlaylist(playlistDispatch, snackbarDispatch);
       getRating(dispatch, snackbarDispatch);
       getHistory(historyDispatch, snackbarDispatch);

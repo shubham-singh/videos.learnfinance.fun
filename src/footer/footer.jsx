@@ -6,13 +6,13 @@ import { ReactComponent as LinkedInIcon } from "../assets/icons/LinkedInIcon.svg
 import { scrollToTop } from "../utils/function";
 
 const Footer = () => {
-  const { setLanguage } = useLocalisation();
+  const { language, setLanguage } = useLocalisation();
 
   return (
     <footer className="footer">
       <div>
         <span
-          className="small pointer m-m"
+          className={`small pointer m-m ${language === "hi" ? "bold" : "" }`}
           onClick={() => {
             setLanguage("hi");
             scrollToTop();
@@ -21,7 +21,7 @@ const Footer = () => {
           हिन्दी
         </span>
         <span
-          className="small pointer m-m"
+          className={`small pointer m-m ${language === "en" ? "bold" : ""}`}
           onClick={() => {
             setLanguage("en");
             scrollToTop();

@@ -8,6 +8,13 @@ export const setupAuthHeaderForServiceCalls = () => {
   delete axios.defaults.headers.common["Authorization"];
 };
 
+export const deleteAuthToken = () => {
+  localStorage.removeItem("auth_learnfinance");
+  setTimeout(() => {
+    window.location.reload();
+  }, 0)
+};
+
 export const isVideoLiked = (likedVideosArr, video) => {
   return likedVideosArr.some((likedVideo) => likedVideo._id === video._id);
 };

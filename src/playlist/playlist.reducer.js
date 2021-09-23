@@ -1,4 +1,5 @@
 const PlaylistReducer = (state, action) => {
+  const id = action.payload?.id;
   const playlistName = action.payload?.playlistName;
   const video = action.payload?.video;
   switch (action.type) {
@@ -26,7 +27,7 @@ const PlaylistReducer = (state, action) => {
     case "CREATE_AND_ADD_TO_PLAYLIST":
       return {
         ...state,
-        playlist: [...state.playlist, { playlistName, videos: [video] }]
+        playlist: [...state.playlist, { _id: id, playlist_name: playlistName, videos: [video] }]
       };
 
     case "RESET":

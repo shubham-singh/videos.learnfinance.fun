@@ -307,9 +307,10 @@ export const createPlaylist = async (
       videoID: video._id
     });
     if (response.data.success) {
+      const id = response.data.playlist.playlists[response.data.playlist.playlists.length - 1]._id;
       playlistDispatch({
         type: "CREATE_AND_ADD_TO_PLAYLIST",
-        payload: { playlistName, video }
+        payload: { id, playlistName, video }
       });
       snackbarDispatch({
         type: "SHOW_SNACKBAR",

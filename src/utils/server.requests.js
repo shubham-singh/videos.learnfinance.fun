@@ -16,7 +16,8 @@ import {
   CREATE_PLAYLIST,
   GET_HISTORY,
   CLEAR_HISTORY,
-  ADD_TO_HISTORY
+  ADD_TO_HISTORY,
+  DELETE_PLAYLIST
 } from "./api.routes";
 import { deleteAuthToken } from "./function";
 
@@ -326,6 +327,28 @@ export const createPlaylist = async (
     });
   }
 };
+
+export const deletePlaylist = async (playlistID, playlistDispatch ,snackbarDispatch, navigate) => {
+  try {
+    const response = await axios.delete(`${DELETE_PLAYLIST}${playlistID}`);
+    if (response.data.success) {
+      playlistDispatch({
+        type: "DELETE_PLAYLIST",
+        payload: { id: response.data.playlistID }
+      })
+      snackbarDispatch({
+        type: "SHOW_SNACKBAR",
+        payload: "Playlist deleted"
+      })
+      navigate('/playlist')
+    }
+  } catch (error) {
+    snackbarDispatch({
+      type: "SHOW_SNACKBAR",
+      payload: "Couldn't delete playlist"
+    })
+  }
+}
 
 export const addToHistory = async (video, historyDispatch) => {
   try {

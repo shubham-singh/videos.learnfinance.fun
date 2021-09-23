@@ -30,6 +30,12 @@ const PlaylistReducer = (state, action) => {
         playlist: [...state.playlist, { _id: id, playlist_name: playlistName, videos: [video] }]
       };
 
+    case "DELETE_PLAYLIST":
+      return {
+        ...state,
+        playlist: state.playlist.filter(playlist => playlist._id !== id)
+      }
+
     case "RESET":
       return {
         ...state,

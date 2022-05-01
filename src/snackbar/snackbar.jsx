@@ -11,7 +11,7 @@ const Snackbar = () => {
     return function () {
       clearInterval(timerID);
     };
-  });
+  }, [snackbar.visible]);
 
   return (
     <>

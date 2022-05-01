@@ -29,3 +29,15 @@ export const scrollToTop = () => {
     behavior: "smooth"
   });
 };
+
+export function debounce(func, timer = 700) {
+  let timeoutID = null;
+  return () => {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+    timeoutID = setTimeout(() => {
+      func();
+    }, timer);
+  }
+}

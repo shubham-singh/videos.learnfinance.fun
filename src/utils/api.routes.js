@@ -1,5 +1,6 @@
 const domain = "https://videos-learnfinance-fun.herokuapp.com";
 
+export const BASE = domain;
 export const LOGIN = `${domain}/user/login`;
 export const SIGNUP = `${domain}/user/signup`;
 export const GET_ALL_VIDEOS = `${domain}/video`;

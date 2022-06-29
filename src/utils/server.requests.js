@@ -17,9 +17,18 @@ import {
   GET_HISTORY,
   CLEAR_HISTORY,
   ADD_TO_HISTORY,
-  DELETE_PLAYLIST
+  DELETE_PLAYLIST,
+  BASE
 } from "./api.routes";
 import { deleteAuthToken } from "./function";
+
+export const pingServer = async () => {
+  try {
+    axios.get(BASE)
+  } catch (error) {
+    console.error('Failed to start server')
+  }
+}
 
 export const login = async (loginInfo, authDispatch, snackbarDispatch) => {
   try {

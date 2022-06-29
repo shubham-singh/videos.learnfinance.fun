@@ -11,8 +11,15 @@ import Login from "./login/login";
 import Signup from "./login/signup";
 import History from "./history/history";
 import FooterMobile from "./footer/footer.mobile";
+import { useEffect } from "react";
+import { pingServer } from "./utils/server.requests";
 
 export default function App() {
+
+  useEffect(() => {
+    pingServer();
+  }, [])
+
   return (
     <div className="App">
       <Snackbar />
